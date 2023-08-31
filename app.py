@@ -12,7 +12,7 @@ app = Dash(
         {"name": "viewport", "content": "width=device-width, initial-scale=1"},
     ],
 )
-# server = app.server
+server = app.server
 app._favicon = "assets/favicon.ico"
 app.title = "Cas13 gRNA Design Tool"
 app.layout = dbc.Container(
@@ -80,12 +80,8 @@ def download_sequence_csv(n_clicks: int, sequence_input: str):
         return dcc.send_data_frame(primer_dataframe.to_csv, "Sequences.csv")
 
 
-# Development Testing
-if __name__ == "__main__":
-    app.run(debug=True)
-
-# Needed for server deployment later on
+# # Development Testing
 # if __name__ == "__main__":
-#     server.run(host="0.0.0.0", port="8080")
+#     app.run(debug=True)
 
 # Author: Caelan Miller - 2023
