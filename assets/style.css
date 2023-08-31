@@ -11,6 +11,15 @@
     color: white;
 }
 
+#gRNA-title a {
+    text-decoration: none;
+    color: white;
+}
+
+#gRNA-title a:hover {
+    color: #5a5a5a;
+}
+
 #seq-input {
     border-radius: 1rem;
     font-size: 2rem;

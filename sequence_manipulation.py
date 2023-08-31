@@ -21,11 +21,11 @@ def sequence_manipulation(sequence_input: str, seq_orientation: str):
     if seq_orientation == "forward":
         first_forward_motif = "aaac"
         second_forward_motif = "a"
-        modified_sequence = first_forward_motif + sequence_input + second_forward_motif
+        modified_sequence = first_forward_motif + sequence_input.upper() + second_forward_motif
         return modified_sequence
     elif seq_orientation == "reverse":
         first_reverse_motif = "agcatt"
-        reverse_complement_sequence = reverse_complement(sequence_input)
+        reverse_complement_sequence = reverse_complement(sequence_input.upper())
         modified_sequence = first_reverse_motif + reverse_complement_sequence
         return modified_sequence
 

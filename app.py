@@ -80,8 +80,8 @@ def download_sequence_csv(n_clicks: int, sequence_input: str):
         return dcc.send_data_frame(primer_dataframe.to_csv, "Sequences.csv")
 
 
-# # Development Testing
-# if __name__ == "__main__":
-#     app.run(debug=True)
+# Development Testing
+if __name__ == "__main__":
+    app.run(debug=True)
 
 # Author: Caelan Miller - 2023

@@ -17,7 +17,7 @@ site_header = dbc.Row(
                     id="gRNA-title",
                     children=[
                         scissors_icon,
-                        "CRISPR Cas13 gRNA Design Tool",
+                        html.A("CRISPR Cas13 gRNA Design Tool", href="/", target="_blank", title="Click to Create New Primers"),
                         dna_icon,
                     ],
                 ),
