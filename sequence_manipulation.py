@@ -1,3 +1,6 @@
+import pandas as pd
+
+
 def reverse_complement(sequence_input: str):
     COMPLEMENT_TABLE = {
         "A": "T",
@@ -25,3 +28,12 @@ def sequence_manipulation(sequence_input: str, seq_orientation: str):
         reverse_complement_sequence = reverse_complement(sequence_input)
         modified_sequence = first_reverse_motif + reverse_complement_sequence
         return modified_sequence
+
+
+def create_sequences_csv(forward_primer: str, reverse_primer: str):
+    primer_dataframe = pd.DataFrame(
+        pd.Series({"Forward": f"{forward_primer}", "Reverse": f"{reverse_primer}"}),
+        columns=["Sequence"],
+    )
+    print(primer_dataframe)
+    return primer_dataframe

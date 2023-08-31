@@ -7,14 +7,13 @@ upload_icon = html.I(
     className="fa-solid fa-cloud-arrow-up fa-2xl",
     style={"margin-top": "1%", "margin-bottom": "3%"},
 )
-download_icon = html.I(
-    className="fa-solid fa-floppy-disk", style={"margin-right": "5px"}
-)
+download_icon = html.I(className="fa-solid fa-floppy-disk fa-lg")
 
 site_header = dbc.Row(
     children=[
-        dbc.Col(children=[
-            html.H1(
+        dbc.Col(
+            children=[
+                html.H1(
                     id="gRNA-title",
                     children=[
                         scissors_icon,
@@ -22,11 +21,12 @@ site_header = dbc.Row(
                         dna_icon,
                     ],
                 ),
-        ])
+            ]
+        )
     ]
 )
 
-sequence_input = dbc.Row(
+sequence_input_form = dbc.Row(
     children=[
         dbc.Col(
             children=[
@@ -47,12 +47,12 @@ sequence_input = dbc.Row(
 )
 
 download_button = dbc.Button(
+    id="download-btn",
     children=[
         download_icon,
         "Download Sequences",
-        dcc.Download(id="gRNA-csv-download"),
+        dcc.Download(id="csv-download"),
     ],
-    className="download-btn",
     title="Download gRNAs as CSV",
 )
 
